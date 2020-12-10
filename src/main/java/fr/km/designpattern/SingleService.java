@@ -1,7 +1,9 @@
 package fr.km.designpattern;
 
 /**
+ * a thread-safe  and lazy way to create singleton
  * best way to create Singleton pattern is with enum class
+ *
  */
 public class SingleService {
 
@@ -12,27 +14,8 @@ public class SingleService {
 }
 
 /**
- * Singleton exemple 1
+ * it's lazy creation and thread-safe
  */
-class EmployeeService{
-    private static  EmployeeService instance = new EmployeeService();
-
-    private EmployeeService() {
-    }
-
-    public static EmployeeService getInstance(){
-        return instance;
-    }
-    // others methods
-    //...
-}
-
-/**
- * Singleton exemple 2
- * This is the best way to create a singleton pattern then exemple 1,
- * because it's lazy creation
- */
-
 enum MyService{
     INSTANCE;
 
