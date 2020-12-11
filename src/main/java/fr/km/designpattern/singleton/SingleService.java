@@ -1,4 +1,4 @@
-package fr.km.designpattern;
+package fr.km.designpattern.singleton;
 
 /**
  * a thread-safe  and lazy way to create singleton
