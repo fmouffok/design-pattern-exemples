@@ -8,8 +8,9 @@ package fr.km.designpattern;
 public class SingleService {
 
     public static void main(String[] args) {
-        MyService instance = MyService.getInstance();
+        MyService instance = MyService.INSTANCE;;
         instance.save(); // print "save hello world"
+
     }
 }
 
@@ -20,9 +21,6 @@ enum MyService{
     INSTANCE;
 
     private MyService() {
-    }
-    public static MyService getInstance(){
-        return INSTANCE;
     }
 
     public void save(){
