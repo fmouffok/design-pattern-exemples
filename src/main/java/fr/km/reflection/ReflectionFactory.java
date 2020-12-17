@@ -49,23 +49,23 @@ public class ReflectionFactory {
                     .map(extractionFileWithoutExtension)
                     .sorted()
                     .collect(Collectors.toList());
-            for (String fileName : list){
-                String completePath = constructReferencePath.apply(fileName);
-                final Class<?> aClass = Class.forName(completePath);
-                sb = new StringBuilder("\npublic class ").append(fileName)
-                        .append(" {\n");
-                for (Field f : aClass.getDeclaredFields()) {
-                    sb.append(Modifier.isPrivate(f.getModifiers())? "private ":" ")
-                            .append("java.lang.String".equals(f.getType().getName())?"String":"java.lang.Integer"
-                                    .equals(f.getType().getName())?"int":"java.lang.Date".equals(f.getType().getName())?"Date":
-                                    "java.lang.Double".equals(f.getType().getName())?"double":
-                                            "java.lang.Float".equals(f.getType().getName())?"float":
-                                                    "java.lang.Long".equals(f.getType().getName())?"Long":f.getType().getName())
-                            .append(" ").append(f.getName()).append(";").append("\n");
-                }
-                sb.append("\n}").toString();
-                System.out.println("clazz : "+sb.toString());
-            }
+//            for (String fileName : list){
+//                String completePath = constructReferencePath.apply(fileName);
+//                final Class<?> aClass = Class.forName(completePath);
+//                sb = new StringBuilder("\npublic class ").append(fileName)
+//                        .append(" {\n");
+//                for (Field f : aClass.getDeclaredFields()) {
+//                    sb.append(Modifier.isPrivate(f.getModifiers())? "private ":" ")
+//                            .append("java.lang.String".equals(f.getType().getName())?"String":"java.lang.Integer"
+//                                    .equals(f.getType().getName())?"int":"java.lang.Date".equals(f.getType().getName())?"Date":
+//                                    "java.lang.Double".equals(f.getType().getName())?"double":
+//                                            "java.lang.Float".equals(f.getType().getName())?"float":
+//                                                    "java.lang.Long".equals(f.getType().getName())?"Long":f.getType().getName())
+//                            .append(" ").append(f.getName()).append(";").append("\n");
+//                }
+//                sb.append("\n}").toString();
+//                System.out.println("clazz : "+sb.toString());
+//            }
         }
     }
 }
